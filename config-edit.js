@@ -27,29 +27,9 @@ function render () {
     h('h1', 'config'),
     h('p', 'You must restart the server before changes will take effect'),
     h('form', { method: 'post' }, [
-      h('div', [
-        h('label', 'port'),
-        h('input', { name: 'port', value: config.port })
-      ]),
       h('h2', 'web'),
       h('div', [
         h('label', ['enabled', checkbox('web')])
-      ]),
-      h('div', [
-        h('label', 'username'),
-        h('input', {
-          name: 'web_user',
-          type: 'text',
-          value: config.web.user
-        })
-      ]),
-      h('div', [
-        h('label', 'password'),
-        h('input', {
-          name: 'web_pass',
-          type: 'password',
-          value: config.web.pass
-        })
       ]),
       h('h2', 'email'),
       h('div', [
