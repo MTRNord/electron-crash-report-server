@@ -42,8 +42,11 @@ module.exports = function saveCrashReport (req, res) {
     doc._id = `${new Date().toISOString()}-${uuid.v4()}`
     doc._attachments = {}
     doc._attachments[file.originalFilename] = {
-      data: fs.readFileSync(file.path)
+      data: file.path
     }
+    /*doc._attachments[file.originalFilename] = {
+      data: fs.readFileSync(file.path)
+    }*/
 
     db.put(doc).then(function (response) {
       if (config.email.enabled) crashReportEmail(response.id)
