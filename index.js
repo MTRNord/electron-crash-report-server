@@ -19,7 +19,7 @@ fs.accessSync('.', fs.W_OK)
 fs.accessSync(path.join(__dirname, 'config.ini'), fs.R_OK | fs.W_OK)
 
 const app = express()
-const server = app.listen(process.env.port, function () {
+const server = app.listen(process.env.PORT, function () {
   const addr = server.address().address
   const port = server.address().port
   console.log(`crash report server running at http://${addr}:${port}`)
