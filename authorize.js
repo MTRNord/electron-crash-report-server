@@ -11,7 +11,7 @@ module.exports = function authorize (req, res, next) {
   else return unauthorized(res)
 
   function authorized (user) {
-    return user.name === config.web.user && user.pass === config.web.pass
+    return user.name === process.env.user && user.pass === process.env.pass
   }
 
   function unauthorized (res) {
