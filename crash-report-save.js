@@ -42,7 +42,6 @@ module.exports = function saveCrashReport (req, res) {
     doc._id = `${new Date().toISOString()}-${uuid.v4()}`
     doc._attachments = {}
     doc._attachments[file.originalFilename] = {
-      content_type: 'application/x-dmp',
       data: fs.readFileSync(file.path)
     }
 
